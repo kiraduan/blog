@@ -1,0 +1,6 @@
+title: 我的小站
+description: 随便写写，记录生活和折腾
+baseurl: ""
+url: "https://kiraduan.loc.cc"
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
