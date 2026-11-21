@@ -21,3 +21,40 @@ article img { max-width: 100%; border-radius: 8px; }
 pre, code { font-family: ui-monospace, Menlo, monospace; font-size: 14px; }
 pre { overflow-x: auto; padding: 12px; background: #8882; border-radius: 8px; }
 .site-footer { margin-top: 48px; padding-top: 12px; border-top: 1px solid #8884; opacity: .6; font-size: 14px; }
+
+
+/* ===== Liquid Glass（2026-11-21 追加） ===== */
+html { background:#edf0f6; }
+body { background:transparent; position:relative; }
+body::before { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(42% 38% at 15% 8%, rgba(110,165,255,.50), rgba(110,165,255,0) 70%),
+    radial-gradient(38% 34% at 88% 6%, rgba(196,158,255,.44), rgba(196,158,255,0) 70%),
+    radial-gradient(45% 40% at 5% 90%, rgba(130,225,205,.38), rgba(130,225,205,0) 70%),
+    radial-gradient(40% 36% at 92% 88%, rgba(255,168,200,.38), rgba(255,168,200,0) 70%),
+    linear-gradient(160deg,#eef2f9,#e7ecf5); }
+.site-header { margin-top:18px; padding:14px 18px; border:1px solid rgba(255,255,255,.65); border-radius:18px;
+  background:rgba(255,255,255,.5); -webkit-backdrop-filter:blur(18px) saturate(170%); backdrop-filter:blur(18px) saturate(170%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 10px 30px rgba(50,60,120,.12); }
+.post-list li { padding:13px 18px; border-radius:16px; border:1px solid rgba(255,255,255,.6);
+  background:rgba(255,255,255,.45); -webkit-backdrop-filter:blur(14px) saturate(160%); backdrop-filter:blur(14px) saturate(160%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85), 0 6px 20px rgba(50,60,120,.08); }
+article { padding:6px 22px 20px; border-radius:22px; border:1px solid rgba(255,255,255,.65);
+  background:rgba(255,255,255,.66); -webkit-backdrop-filter:blur(18px) saturate(160%); backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 12px 34px rgba(50,60,120,.10); }
+pre { background:rgba(255,255,255,.45); }
+.site-footer { border-top:none; }
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+  .site-header, .post-list li { background:rgba(255,255,255,.88); } article { background:rgba(255,255,255,.94); } }
+@media (prefers-color-scheme: dark) {
+  html { background:#0e1116; }
+  body::before { background:
+    radial-gradient(42% 38% at 15% 8%, rgba(70,110,200,.35), rgba(70,110,200,0) 70%),
+    radial-gradient(38% 34% at 88% 6%, rgba(130,95,200,.30), rgba(130,95,200,0) 70%),
+    radial-gradient(45% 40% at 5% 90%, rgba(60,160,140,.26), rgba(60,160,140,0) 70%),
+    radial-gradient(40% 36% at 92% 88%, rgba(190,90,130,.26), rgba(190,90,130,0) 70%),
+    linear-gradient(160deg,#11151d,#0d1017); }
+  .site-header, .post-list li { background:rgba(26,29,36,.55); border-color:rgba(255,255,255,.16); box-shadow:inset 0 1px 0 rgba(255,255,255,.14), 0 10px 30px rgba(0,0,0,.35); }
+  article { background:rgba(22,25,32,.78); border-color:rgba(255,255,255,.16); box-shadow:inset 0 1px 0 rgba(255,255,255,.12), 0 12px 34px rgba(0,0,0,.4); }
+  pre { background:rgba(255,255,255,.08); }
+}
